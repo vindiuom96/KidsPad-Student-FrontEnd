@@ -1,0 +1,109 @@
+.main-div {
+  width: 1000px !important;
+  height: 600px !important;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.button {
+  width: 180px;
+  height: 180px;
+  justify-content: space-between;
+  margin: 20px;
+  border-radius: 20px;
+}
+
+.mat-display-2 {
+  margin-bottom: 10px;
+  font-family: "Snap ITC";
+  color: #153ff4;
+}
+
+.options {
+  font-size: x-large;
+  color: #707070;
+}
+
+.options img {
+  height: 80px;
+  width: 80px;
+}
+
+.options-long {
+  width: 300px;
+  height: 100px;
+  justify-content: space-around;
+  margin: 0 30px;
+  color: #707070;
+}
+
+.add {
+  background-color: #ff4e4e;
+  color: white;
+}
+
+.subtract {
+  background-color: #64fa64;
+}
+
+.multiply {
+  background-color: #e352e3;
+  color: white;
+}
+
+.divide {
+  background-color: #ffe044;
+}
+
+.rank {
+  display: block;
+  width: 300px;
+  height: 200px;
+  background: url("../../../../assets/img/rank1.png") no-repeat center center;
+  color: black;
+  margin-bottom: 0px;
+  padding-bottom: 50px;
+  font-weight: bold;
+}
+
+/* START -- hamburger menu */
+.hamburger {
+  justify-content: flex-start;
+}
+.hamburger mat-form-field {
+  width: 50px;
+}
+.hamburger ::ng-deep .mat-select-arrow {
+  opacity: 0;
+}
+.hamburger ::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+.hamburger ::ng-deep .mat-select-value-text {
+  display: none;
+}
+
+.mat-icon {
+  font-size: 50px;
+  width: 50px;
+  height: 50px;
+}
+
+.home {
+  width: 80px;
+  height: 80px;
+}
+
+.volume {
+  width: 60px;
+  padding-top: 5px;
+}
+/* END -- hamburger menu */
+
+.leaderboard {
+  background-color: #cec7f1;
+}
+
+.ask-teacher {
+  background-color: #fee08f;
+}

@@ -1,0 +1,140 @@
+<div fxLayoutAlign="center center" fxFlexFill fxLayout="column">
+  <!-- START -- top menu -->
+  <div fxFlex="10" fxFlexFill>
+    <div class="hamburger" fxLayout="row">
+      <div fxFlex="5"></div>
+      <mat-form-field>
+        <mat-select-trigger>
+          <mat-icon>menu</mat-icon>
+        </mat-select-trigger>
+        <mat-select>
+          <mat-option routerLink="/about">About Us</mat-option>
+          <mat-option routerLink="/login/student">Logout</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div fxFlex="2"></div>
+      <div
+        style="cursor: pointer"
+        routerLink="/student-home"
+        (click)="ClickAudio()"
+      >
+        <img class="home" src="../../../../assets/img/home.png" />
+      </div>
+      <div fxFlex="70"></div>
+      <div style="cursor: pointer" *ngIf="isMute">
+        <img
+          class="volume"
+          src="../../../../assets/img/mute.png"
+          (click)="ClickAudio(); ToggleMute()"
+        />
+      </div>
+      <div style="cursor: pointer" *ngIf="!isMute">
+        <img
+          class="volume"
+          src="../../../../assets/img/volume.png"
+          (click)="ClickAudio(); ToggleMute()"
+        />
+      </div>
+    </div>
+  </div>
+  <!-- END -- top menu -->
+  <div fxLayoutAlign="center center" fxFlexFill fxFlex="90">
+    <div fxLayoutAlign="center center" fxLayout="column" class="main-div">
+      <div fxLayout="row">
+        <div
+          class="mat-display-2 header"
+          fxLayout="row"
+          fxFlex="90"
+          fxLayoutAlign="center center"
+        >
+          Hello {{ userFirstName | titlecase }}, Let's Play!
+        </div>
+        <div
+          class="mat-display-3 header rank"
+          fxLayoutAlign="center center"
+          fxFlex="15"
+        >
+          {{ studentRank }}
+        </div>
+      </div>
+      <div class="content">
+        <div>
+          <button
+            class="btn-student button options add"
+            routerLink="login/student"
+            mat-raised-button
+            routerLink="/level/add"
+            (click)="ClickAudio()"
+          >
+            <div fxLayout="column" fxLayoutAlign="center center">
+              <img src="../../../../assets/img/addition.png" />
+              Addition
+            </div>
+          </button>
+          <button
+            class="btn-student button options subtract"
+            routerLink="login/student"
+            mat-raised-button
+            routerLink="/level/subtract"
+            (click)="ClickAudio()"
+          >
+            <div fxLayout="column" fxLayoutAlign="center center">
+              <img src="../../../../assets/img/minus.png" />
+              Subtraction
+            </div>
+          </button>
+          <button
+            class="btn-student button options multiply"
+            routerLink="login/student"
+            mat-raised-button
+            routerLink="/level/multiply"
+            (click)="ClickAudio()"
+          >
+            <div fxLayout="column" fxLayoutAlign="center center">
+              <img src="../../../../assets/img/multiply.png" />
+              Multiplication
+            </div>
+          </button>
+          <button
+            class="btn-student button options divide"
+            routerLink="login/student"
+            mat-raised-button
+            routerLink="/level/divide"
+            (click)="ClickAudio()"
+          >
+            <div fxLayout="column" fxLayoutAlign="center center">
+              <img src="../../../../assets/img/divide.png" />
+              Division
+            </div>
+          </button>
+        </div>
+        <div fxLayoutAlign="center center">
+          <button
+            class="btn-student button options options-long leaderboard"
+            routerLink="login/student"
+            mat-raised-button
+            routerLink="/leaderboard"
+            (click)="ClickAudio()"
+          >
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <img src="../../../../assets/img/podium.png" />
+              View Leaderboard
+            </div>
+          </button>
+          <button
+            class="btn-student button options options-long ask-teacher"
+            routerLink="login/student"
+            mat-raised-button
+            routerLink="/teacher-profile"
+            (click)="ClickAudio()"
+          >
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <img src="../../../../assets/img/teacher.png" />
+              Ask From Teacher
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
