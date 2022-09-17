@@ -1,0 +1,93 @@
+<div fxLayoutAlign="center center" fxFlexFill fxLayout="column">
+  <!-- START -- top menu -->
+  <div fxFlex="10" fxFlexFill>
+    <div class="hamburger" fxLayout="row">
+      <div fxFlex="5"></div>
+      <mat-form-field>
+        <mat-select-trigger>
+          <mat-icon>menu</mat-icon>
+        </mat-select-trigger>
+        <mat-select>
+          <mat-option routerLink="/about">About Us</mat-option>
+          <mat-option routerLink="/login/student">Logout</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div fxFlex="2"></div>
+      <div
+        style="cursor: pointer"
+        routerLink="/student-home"
+        (click)="ClickAudio()"
+      >
+        <img class="home" src="../../../../assets/img/home.png" />
+      </div>
+      <div fxFlex="70"></div>
+      <div style="cursor: pointer" *ngIf="isMute">
+        <img
+          class="volume"
+          src="../../../../assets/img/mute.png"
+          (click)="ClickAudio(); ToggleMute()"
+        />
+      </div>
+      <div style="cursor: pointer" *ngIf="!isMute">
+        <img
+          class="volume"
+          src="../../../../assets/img/volume.png"
+          (click)="ClickAudio(); ToggleMute()"
+        />
+      </div>
+    </div>
+  </div>
+  <!-- END -- top menu -->
+  <div fxLayoutAlign="center center" fxFlexFill fxFlex="90">
+    <div fxLayoutAlign="center center" fxLayout="column" class="main-div">
+      <div class="mat-display-3 header" fxLayout="row">
+        Select a level for {{ gameType }}
+      </div>
+
+      <div class="content">
+        <div class="levels">
+          <div
+            class="level-item"
+            fxLayoutAlign="center center"
+            *ngFor="let data of dataSource; first as isFirst"
+          >
+            <button
+              class="button btn-level"
+              mat-raised-button
+              fxFlex="30"
+              [disabled]="data.status == 'lock'"
+              (click)="ClickAudio(); levelSelected(data.lvl)"
+            >
+              Level {{ data.lvl }}
+            </button>
+            <div fxFlex="2"></div>
+            <div class="status" fxFlex="20" fxLayoutAlign="center center">
+              <img
+                src="../../../../assets/img/lock.png"
+                *ngIf="data.status == 'lock'"
+              />
+              <img
+                src="../../../../assets/img/unlock.png"
+                *ngIf="data.status == 'unlock'"
+              />
+              <img
+                src="../../../../assets/img/complete.png"
+                *ngIf="data.status == 'complete'"
+              />
+              <!-- {{ data.status }} -->
+            </div>
+            <div fxFlex="2"></div>
+            <div
+              fxFlex="40"
+              fxLayoutAlign="center center"
+              style="height: 70px; overflow: hidden"
+              class="comment"
+            >
+              {{ data.comment }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
