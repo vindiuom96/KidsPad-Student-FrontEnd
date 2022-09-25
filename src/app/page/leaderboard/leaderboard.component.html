@@ -1,0 +1,120 @@
+<div fxLayoutAlign="center center" fxFlexFill fxLayout="column">
+  <!-- START -- top menu -->
+  <div fxFlex="10" fxFlexFill>
+    <div class="hamburger" fxLayout="row">
+      <div fxFlex="5"></div>
+      <mat-form-field>
+        <mat-select-trigger>
+          <mat-icon>menu</mat-icon>
+        </mat-select-trigger>
+        <mat-select>
+          <mat-option>About Us</mat-option>
+          <mat-option routerLink="/login/student">Logout</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div fxFlex="2"></div>
+      <div
+        style="cursor: pointer"
+        routerLink="/student-home"
+        *ngIf="!isTeacher"
+        (click)="ClickAudio()"
+      >
+        <img class="home" src="../../../../assets/img/home.png" />
+      </div>
+      <div
+        style="cursor: pointer"
+        routerLink="/teacher-home"
+        *ngIf="isTeacher"
+        (click)="ClickAudio()"
+      >
+        <img class="home" src="../../../../assets/img/home.png" />
+      </div>
+    </div>
+  </div>
+  <!-- END -- top menu -->
+  <div fxLayoutAlign="center center" fxFlexFill fxFlex="90">
+    <div fxLayoutAlign="center center" fxLayout="column" class="main-div">
+      <div
+        class="mat-display-3 header student"
+        fxLayout="row"
+        *ngIf="!isTeacher"
+      >
+        Leaderboard
+      </div>
+      <div
+        class="mat-display-3 header teacher"
+        fxLayout="row"
+        *ngIf="isTeacher"
+      >
+        Leaderboard
+      </div>
+
+      <div class="content">
+        <div class="levels student" *ngIf="!isTeacher">
+          <div
+            class="level-item"
+            fxLayoutAlign="center center"
+            *ngFor="let data of dataSource; index as i"
+          >
+            <div
+              class="badge"
+              fxFlex="2"
+              fxLayoutAlign="center center"
+              *ngIf="i == 0 || i == 1 || i == 2"
+            >
+              <img src="../../../assets/img/rank-rz.png" />
+            </div>
+
+            <div class="status" fxFlex="20" fxLayoutAlign="center center">
+              {{ dataSource.indexOf(data) + 1 }}
+            </div>
+            <div fxFlex="2"></div>
+            <div class="status" fxFlex="50" fxLayoutAlign="center center">
+              {{ data.firstName | titlecase }}
+              <!-- {{ data.middleName | titlecase }} -->
+              {{ data.lastName | titlecase }}
+            </div>
+            <div fxFlex="2"></div>
+            <div fxFlex="10" fxLayoutAlign="center center" fxLayout="column">
+              {{ data.marks }}
+            </div>
+          </div>
+        </div>
+
+        <div class="levels teacher" *ngIf="isTeacher">
+          <div
+            class="level-item"
+            fxLayoutAlign="center center"
+            *ngFor="let data of dataSource; first as isFirst"
+          >
+            <div class="status" fxFlex="20" fxLayoutAlign="center center">
+              {{ dataSource.indexOf(data) + 1 }}
+            </div>
+            <div fxFlex="2"></div>
+            <div class="status" fxFlex="50" fxLayoutAlign="center center">
+              {{ data.firstName | titlecase }}
+              <!-- {{ data.middleName | titlecase }} -->
+              {{ data.lastName | titlecase }}
+            </div>
+            <div fxFlex="2"></div>
+            <div fxFlex="10" fxLayoutAlign="center center">
+              {{ data.marks }}
+            </div>
+            <div fxFlex="2"></div>
+            <div fxFlex="20" fxLayoutAlign="center center">
+              <button
+                mat-raised-button
+                style="background-color: #e01c1c; color: white"
+                id="{{ data.studentId }}"
+                (click)="ClickAudio(); UpdateComment(data.studentId)"
+                matTooltip="Click to comment on the score"
+              >
+                <span class="material-symbols-outlined"> add_comment </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
