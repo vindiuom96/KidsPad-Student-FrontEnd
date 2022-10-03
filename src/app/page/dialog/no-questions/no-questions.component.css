@@ -1,0 +1,27 @@
+.success-popup mat-dialog-actions {
+  justify-content: center;
+}
+
+.success-popup .success-btn {
+  background-color: #6684ac;
+  color: white;
+  border: 1px solid #707070;
+  border-radius: 50px;
+  font-family: "Snap ITC";
+  font-size: large;
+  width: 150px;
+}
+
+::ng-deep .mat-dialog-container {
+  border-radius: 60px;
+  box-shadow: inset 50px 50px 30px #00000029;
+}
+.mat-display-1 {
+  margin-bottom: 10px;
+  font-family: "Snap ITC";
+  color: #91242f;
+}
+
+mat-dialog-content img {
+  width: 80px;
+}
