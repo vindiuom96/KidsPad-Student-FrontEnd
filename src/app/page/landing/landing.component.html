@@ -1,0 +1,24 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+  <div fxLayoutAlign="center center" fxLayout="column" class="main-div">
+    <div class="mat-display-3 header">Welcome to KidsPad</div>
+    <div class="mat-display-2 sub-header">Select who you are!</div>
+    <div fxLayout="column">
+      <button
+        class="btn-student button"
+        routerLink="login/student"
+        mat-raised-button
+        (click)="ClickAudio()"
+      >
+        Student
+      </button>
+      <button
+        class="btn-teacher button"
+        routerLink="login/teacher"
+        mat-raised-button
+        (click)="ClickAudio()"
+      >
+        Teacher
+      </button>
+    </div>
+  </div>
+</div>

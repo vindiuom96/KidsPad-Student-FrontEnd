@@ -1,0 +1,14 @@
+.main-div {
+  width: 800px !important;
+  height: 600px !important;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.button {
+  width: 300px;
+  height: 80px;
+  justify-content: space-between;
+  margin: 20px;
+  border-radius: 50px;
+  font-size: xx-large;
+}
