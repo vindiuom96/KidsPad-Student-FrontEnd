@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>
+  {{ data.type | titlecase }} Level {{ data.level }} Completed!
+</h2>
+<mat-dialog-content>
+  Congratulations! You completed level {{ data.level }} successfully.
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close routerLink="level/{{ data.type }}">
+    Go back to Levels
+  </button>
+  <button mat-raised-button mat-dialog-close routerLink="student-home">
+    Go back to Home
+  </button>
+</mat-dialog-actions>
